@@ -1,0 +1,21 @@
+{
+  "name": "atm-2016",
+  "authors": [
+    "Pawel Wieladek <pawel.wieladek@allegrogroup.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "reveal.js": "~3.3.0"
+  }
+}
