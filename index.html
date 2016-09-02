@@ -2,14 +2,278 @@
     <head>
         <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
         <link rel="stylesheet" href="bower_components/reveal.js/css/theme/white.css">
+        <link rel="stylesheet" href="bower_components/highlightjs/styles/github.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div class="reveal">
             <div class="slides">
+                <section>
+                    <h1>Front-end Empire State Building</h1>
+                </section>
+                <section>
+                    <h2>React</h2>
+                    <div>
+                        <img src="images/react-logo.svg" height="200" />
+                    </div>
+                    <q>A JavaScript library for <strong>building user interfaces</strong></q>.
+                    <aside class="notes">
+                        - Zasada jednej odpowiedzialności zarówno dla frameworka - jedyną odpowiedzialnością Reacta jest budowanie interfejsu
+                        - React udostępnia komponent, który pomaga z zachowaniu Single Responsibility Principle
+                    </aside>
+                </section>
+                <section>
+                    <section>
+                        <h2>Deklaratywność</h2>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ```
+                            setState({ visible: true });
+                            ```
+                        </script>
+                        <aside class="notes">
+                            - Deklaratywność stanu - mówię jak ma wyglądać stan aplikacji, a React sam wie jak zaaplikować tą zmianę na widoku
+                        </aside>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ```
+                            <Header>
+                                <AllegroLogo />
+                                <SearchForm />
+                                <ShoppingCart />
+                            </Header>
+                            ```
+                        </script>
+                        <aside class="notes">
+                            - Deklaratywność widoku - mówię co ma być wyświetlone, a komponent sam wie jak to zrobić
+                        </aside>
+                    </section>
+                    <section>
+                        <img src="images/emoji-spaghetti.png" />
+                    </section>
+                    <section>
+                        <img src="images/emoji-pizza.png" />
+                    </section>
+                </section>
+                <section>
+                    <h2>Virtual DOM</h2>
+                    <div>
+                        <img src="images/virtual-dom.svg" height="300" />
+                    </div>
+                </section>
+                <section>
+                    <section>
+                        <h2>Komponent</h2>
+                        <img src="images/component-render.svg" height="300" />
+                    </section>
+                    <section>
+                        <img src="images/component-props-state.svg" height="300" />
+                    </section>
+                    <section>
+                        <img src="images/component-props.svg" height="300" />
+                    </section>
+                    <section>
+                        <img src="images/component-state.svg" height="300" />
+                    </section>
+                    <section>
+                        <pre lang="xml"><code class="lang-js hljs javascript">(props, state) => element</code></pre>
+                    </section>
+                </section>
+                <section>
+                    <section style="text-align: left">
+                        <ol start="1">
+                            <li>Komponent powinien mieć <strong>jedno źródło prawdy</strong>.</li>
+                        </ol>
+                    </section>
+                    <section style="text-align: left">
+                        <ol start="2">
+                            <li>Stan komponentu powinien być <br /><strong>minimalną reprezentacją</strong> potencjalnych zmian.</li>
+                        </ol>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2 class="code">&lt;SearchForm /&gt;</h2>
+                        <img src="images/example-component.png" />
+                    </section>
+                    <section>
+                        <div>
+                            <img src="images/component-simple.svg" />
+                        </div>
+                    </section>
+                    <section>
+                        <div>
+                            <img src="images/container-component.svg" />
+                        </div>
+                        <aside class="notes">
+                            - Kontener state + request
+                            - Komponent render
+                        </aside>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2 class="code">&lt;SearchForm /&gt;</h2>
+                        <img src="images/example-component.png" />
+                    </section>
+                    <section>
+                        <h2 class="code">&lt;Input /&gt;</h2>
+                        <img src="images/example-input.png" />
+                    </section>
+                    <section>
+                        <h2 class="code">&lt;SuggestionsList /&gt;</h2>
+                        <img src="images/example-list.png" />
+                    </section>
+                    <section>
+                        <h2 class="code">&lt;Suggestion /&gt;</h2>
+                        <img src="images/example-list-item.png" />
+                    </section>
+                    <section>
+                        <img src="images/container-large.svg" />
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <img src="images/example-component-state.png" />
+                    </section>
+                    <section>
+                        <img src="images/container-large-state.svg" />
+                        <aside class="notes">
+                            - Stan kontenera rośnie
+                            - Złamana zasada minimalnej reprezentacji
+                        </aside>
+                    </section>
+                    <section>
+                        <img src="images/container-unnecessary-render.svg" />
+                        <aside class="notes">
+                            - Zbędne przerenderowanie poddrzewa
+                        </aside>
+                    </section>
+                    <section>
+                        <div>
+                            <img src="images/containers-multiple.svg" />
+                        </div>
+                        <aside class="notes">
+                            - Wiele kontenerów
+                            - Stan każdego z nich jest mały
+                        </aside>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <img src="images/example-extra-feature.png" />
+                    </section>
+                    <section>
+                        <img src="images/example-extra-feature-state.png" />
+                    </section>
+                    <section>
+                        <div>
+                            <img src="images/containers-multiple-problem.svg" />
+                        </div>
+                        <aside class="notes">
+                            - Złamana zasada jednego źródła prawdy - stan jest rozrzucony po wielu komponentach
+                            - Złamana zasada open-close
+                        </aside>
+                    </section>
+                </section>
+                <section>
+                    <div>
+                        <img src="images/redux.svg" />
+                    </div>
+                    <aside class="notes">
+                        - Wydzielenie stanu do osobnej części aplikacji
+                        - Przy zmianie wymagań biznesowych, stan komponent podpina się pod store i czyta odpowiedni stan
+                    </aside>
+                </section>
+                <section>
+                    <h2>Redux</h2>
+                    <div>
+                        <img src="images/redux-logo.svg" height="200" />
+                    </div>
+                    <q><strong>Predictable state container</strong> for JavaScript apps.</q>
+                </section>
+                <section>
+                    <section>
+                        <h3>1. Jedno źródło prawdy</h3>
+                        <p>Stan aplikacji jest jednym obiektem</p>
+                        <h4>Store</h4>
+                    </section>
+                    <section>
+                        <h3>2. Stan jest <em>read-only</em></h3>
+                        <p>Modyfikacja stanu następuje asynchronicznie
+                        <h4>Akcja</h4>
+                    </section>
+                    <section>
+                        <h3>3. Zmiana stanu jest czystą funkcją</h3>
+                        <p>Modyfikację stanu opisuje funkcja</p>
+                        <h4>Reducer</h4>
+                    </section>
+                </section>
                 <section data-markdown>
                     <script type="text/template">
-                        # Front-end Empire State Building
+                        <h2>Action</h2>
+                        ```js
+                        {
+                          type: ADD_TODO,
+                          text: 'Build my first Redux app'
+                        }
+                        ```
+                        <aside class="notes">
+                            - Akcja opisuje co się zmieniło
+                            - Jedyne źródło informacji o zmianie dla store'a
+                            - Minimalna reprezentacja zmiany
+                            - Zwykły obiekt JavaScript
+                            - Jedyne wymagane pole to type
+                            - Akcja i stan muszą być serializowalne
+                        </aside>
                     </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+                        <h2>Flux Standard Action</h2>
+                        ```js
+                        {
+                          type,
+                          payload,
+                          error,
+                          meta
+                        }
+                        ```
+                        <aside class="notes">
+                            Dobrze jest przygotować funkcję tworzącą FSA
+                        </aside>
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+                        <h2>Action creator</h2>
+                        ```js
+                        function addItem(text) {
+                          return {
+                            type: ADD_TODO,
+                            text
+                          }
+                        }
+                        ```
+                        <aside class="notes">
+                            Funkcja, która zwraca akcję (jedną lub kilka)
+                        </aside>
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+                        <h2>Reducer</h2>
+                        ```js
+                        (state, action) => state
+                        ```
+                    </script>
+                    <aside class="notes">
+                        - Reducer opisuje jak zmienić stan, wiedząc co się zmieniło
+                        - Musi być funkcją bez efektów ubocznych
+                        - Bez mutowania argumentów, bez requestów, bez niespodzianek.
+                    </aside>
                 </section>
             </div>
         </div>
