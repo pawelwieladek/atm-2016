@@ -13,6 +13,9 @@ Reveal.initialize({
         { src: 'bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true },
 
         // Speaker notes
-        { src: 'bower_components/reveal.js/plugin/notes/notes.js', async: true }
+        { src: 'bower_components/reveal.js/plugin/notes/notes.js', async: true },
+
+        { src: 'bower_components/socket.io-client/socket.io.js', async: true },
+        { src: 'bower_components/reveal.js/plugin/notes-server/client.js', async: true }
     ]
 });

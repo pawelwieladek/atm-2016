@@ -1,0 +1,22 @@
+{
+  "name": "atm-2016",
+  "version": "1.0.0",
+  "description": "## Front-end Empire State Building",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pawelwieladek/atm-2016.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pawelwieladek/atm-2016/issues"
+  },
+  "homepage": "https://github.com/pawelwieladek/atm-2016#readme"
+}
