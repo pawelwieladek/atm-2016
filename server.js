@@ -11,12 +11,11 @@ var server    = http.createServer(app);
 io = io(server);
 
 var opts = {
-    port :      1947,
-    baseDir :   __dirname
+    port: 1947,
+    baseDir: __dirname
 };
 
 io.on( 'connection', function( socket ) {
-
     socket.on( 'new-subscriber', function( data ) {
         socket.broadcast.emit( 'new-subscriber', data );
     });
@@ -30,28 +29,16 @@ io.on( 'connection', function( socket ) {
         delete data.state.overview;
         socket.broadcast.emit( 'statechanged-speaker', data );
     });
-
 });
 
-[ '', 'images', 'bower_components' ].forEach( function( dir ) {
-    app.use( '/' + dir, staticDir( opts.baseDir + '/' + dir ) );
-});
+app.use('/', staticDir( opts.baseDir + '/'));
 
-app.get('/', function( req, res ) {
-
-    res.writeHead( 200, { 'Content-Type': 'text/html' } );
-    fs.createReadStream( opts.baseDir + '/index.html' ).pipe( res );
-
-});
-
-app.get( '/notes/:socketId', function( req, res ) {
-
+app.get('/notes/:socketId', function(req, res) {
     fs.readFile( opts.baseDir + '/notes.html', function( err, data ) {
         res.send( Mustache.to_html( data.toString(), {
             socketId : req.params.socketId
         }));
     });
-
 });
 
 // Actually listen
