@@ -46,7 +46,7 @@ app.get('/', function( req, res ) {
 
 app.get( '/notes/:socketId', function( req, res ) {
 
-    fs.readFile( opts.baseDir + '/bower_components/reveal.js/plugin/notes-server/notes.html', function( err, data ) {
+    fs.readFile( opts.baseDir + '/notes.html', function( err, data ) {
         res.send( Mustache.to_html( data.toString(), {
             socketId : req.params.socketId
         }));
