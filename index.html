@@ -102,7 +102,7 @@
                     </section>
                 </section>
                 <section style="text-align: left">
-                    <div style="margin-bottom: 100px">Komponent powinien mieć <strong>jedno źródło prawdy</strong>.</div>
+                    <div style="margin-bottom: 100px">Komponent powinien mieć <strong>jedno źródło prawdy</strong> i <strong>jedną odpowiedzialność</strong>.</div>
                     <div class="fragment">Stan komponentu powinien być <br /><strong>minimalną reprezentacją</strong> potencjalnych zmian.</div>
                 </section>
                 <section>
@@ -256,7 +256,7 @@
                                 - Jedyne źródło informacji o zmianie
                                 - Minimalna reprezentacja zmiany
                                 - Zwykły obiekt JavaScript
-                                - Jedyne wymagane pole to type
+                                - Jedyne wymagane pe to type
                                 - Akcja i stan muszą być serializowalne, dlatego typ to String
                             </aside>
                         </script>
@@ -333,8 +333,11 @@
                     <section data-transition="slide-in fade-out">
                         <img src="images/redux-compose-1.svg" />
                     </section>
-                    <section data-transition="fade-in slide-out">
+                    <section data-transition="fade-in fade-out">
                         <img src="images/redux-compose-2.svg" />
+                    </section>
+                    <section data-transition="fade-in slide-out">
+                        <img src="images/redux-compose-3.svg" height="600" />
                     </section>
                 </section>
                 <section>
@@ -347,8 +350,10 @@
                     <img src="images/react-logo.svg" class="small" height="100" />
                     <h3>React</h3>
                     <ul>
-                        <li class="fragment">Komponent powinien mieć <strong>jedno źródło prawdy</strong>.</li>
-                        <li class="fragment">Stan komponentu powinien być <br /><strong>minimalną reprezentacją</strong> potencjalnych zmian.</li>
+                        <li class="fragment">Jedno <strong>źródło prawdy</strong> i jedna <strong>odpowiedzialność</strong></li>
+                        <li class="fragment"><strong>Minimalną reprezentacja</strong> potencjalnych zmian</li>
+                        <li class="fragment">Wzorzec <strong>Higher Order Component</strong></li>
+                        <li class="fragment">Unikanie <strong>zbędnego renderowania</strong></li>
                     </ul>
                 </section>
                 <section>
@@ -364,7 +369,7 @@
                 <section>
                     <h2>Q&A</h2>
                     <img src="images/wielad.png" height="200" />
-                    <a href="http://pawelwieladek.github.io">pawelwieladek.github.io</a>
+                    <p><a href="http://pawelwieladek.github.io">pawelwieladek.github.io</a></p>
                 </section>
             </div>
         </div>
