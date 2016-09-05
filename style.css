@@ -30,6 +30,10 @@ body {
     font-family: 'Helvetica', sans-serif;
 }
 
+.reveal h1.main-title {
+    color: #fff;
+}
+
 .reveal section img {
     margin: 45px auto;
 }
@@ -47,4 +51,21 @@ body {
     font-family: monospace;
     text-transform: none;
     font-weight: normal;
+}
+
+.reveal ul {
+    margin-top: 40px;
+    list-style-type: none;
+}
+
+.reveal ol {
+    margin-top: 40px;
+}
+
+.reveal ul li {
+    margin-bottom: 30px;
+}
+
+.reveal ol li {
+    margin-bottom: 15px;
 }

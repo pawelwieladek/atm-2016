@@ -8,16 +8,43 @@
     <body>
         <div class="reveal">
             <div class="slides">
+                <section data-background-image="images/background.jpg">
+                    <h1 class="main-title">Front-end Empire State Building</h1>
+                </section>
                 <section>
-                    <h1>Front-end Empire State Building</h1>
+                    <section>
+                        <h2>Front-end</h2>
+                        <img src="images/js-logo.png" height="200" />
+                    </section>
+                    <section>
+                        <h2>Empire</h2>
+                        <div style="display: flex; justify-content: space-around">
+                            <div>
+                                <img src="images/react-logo.svg" height="200" />
+                                <h3>React</h3>
+                            </div>
+                            <div>
+                                <img src="images/redux-logo.svg" height="200" />
+                                <h3>Redux</h3>
+                            </div>
+                        </div>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            <h2>State Building</h2>
+                            <img src="images/state-building.svg" />
+                        </script>
+                    </section>
                 </section>
                 <section>
                     <h2>React</h2>
                     <img src="images/react-logo.svg" height="200" />
                     <q>A JavaScript library for <strong>building user interfaces</strong></q>.
                     <aside class="notes">
-                        - Zasada jednej odpowiedzialności zarówno dla frameworka - jedyną odpowiedzialnością Reacta jest budowanie interfejsu
-                        - React udostępnia komponent, który pomaga z zachowaniu Single Responsibility Principle
+                        <ul>
+                            <li>Zasada jednej odpowiedzialności zarówno dla frameworka - jedyną odpowiedzialnością Reacta jest budowanie interfejsu</li>
+                            <li>React udostępnia komponent, który pomaga z zachowaniu Single Responsibility Principle</li>
+                        </ul>
                     </aside>
                 </section>
                 <section>
@@ -48,9 +75,6 @@
                             - Deklaratywność widoku - mówię co ma być wyświetlone, a komponent sam wie jak to zrobić
                         </aside>
                     </section>
-                    <section>
-                        <img src="images/emoji-pizza.png" />
-                    </section>
                 </section>
                 <section>
                     <h2>2. Wydajność</h2>
@@ -78,10 +102,8 @@
                     </section>
                 </section>
                 <section style="text-align: left">
-                    <ol start="1">
-                        <li>Komponent powinien mieć <strong>jedno źródło prawdy</strong>.</li>
-                        <li class="fragment">Stan komponentu powinien być <br /><strong>minimalną reprezentacją</strong> potencjalnych zmian.</li>
-                    </ol>
+                    <div style="margin-bottom: 100px">Komponent powinien mieć <strong>jedno źródło prawdy</strong>.</div>
+                    <div class="fragment">Stan komponentu powinien być <br /><strong>minimalną reprezentacją</strong> potencjalnych zmian.</div>
                 </section>
                 <section>
                     <section>
@@ -198,17 +220,17 @@
                 </section>
                 <section>
                     <section>
-                        <h3>1. Jedno źródło prawdy</h3>
+                        <h3>Jedno źródło prawdy</h3>
                         <p>Stan aplikacji jest jednym obiektem</p>
                         <h4>Store</h4>
                     </section>
                     <section>
-                        <h3>2. Stan jest <em>read-only</em></h3>
+                        <h3>Stan jest <em>read-only</em></h3>
                         <p>Modyfikacja stanu następuje asynchronicznie
                         <h4>Akcja</h4>
                     </section>
                     <section>
-                        <h3>3. Zmiana stanu nie powoduje efektów ubocznych</h3>
+                        <h3>Zmiana stanu nie powoduje efektów ubocznych</h3>
                         <p>Modyfikację stanu opisuje funkcja</p>
                         <h4>Reducer</h4>
                     </section>
@@ -316,24 +338,28 @@
                     </section>
                 </section>
                 <section>
-                    <h2>Do zapamiętania</h2>
-                    <img src="images/react-logo.svg" class="small" height="100" />
-                    <h3>React</h3>
-                    <ol>
-                        <li class="fragment">Komponent powinien mieć <strong>jedno źródło prawdy</strong>.</li>
-                        <li class="fragment">Stan komponentu powinien być <br /><strong>minimalną reprezentacją</strong> potencjalnych zmian.</li>
-                    </ol>
+                    <img src="images/react-redux.svg" />
                 </section>
                 <section>
-                    <h2>Do zapamiętania</h2>
+                    <img src="images/thumbs-up.png" />
+                </section>
+                <section>
+                    <img src="images/react-logo.svg" class="small" height="100" />
+                    <h3>React</h3>
+                    <ul>
+                        <li class="fragment">Komponent powinien mieć <strong>jedno źródło prawdy</strong>.</li>
+                        <li class="fragment">Stan komponentu powinien być <br /><strong>minimalną reprezentacją</strong> potencjalnych zmian.</li>
+                    </ul>
+                </section>
+                <section>
                     <img src="images/redux-logo.svg" class="small" height="100" />
                     <h3>Redux</h3>
-                    <ol>
+                    <ul>
                         <li class="fragment">Akcja opisuje <strong>co</strong> się zmieniło.</li>
                         <li class="fragment">Reducer opisuje <strong>jak</strong> zmienić stan.</li>
                         <li class="fragment">Reducer może reagować na wiele akcji.</li>
                         <li class="fragment">Reducery można komponować.</li>
-                    </ol>
+                    </ul>
                 </section>
                 <section>
                     <h2>Q&A</h2>
