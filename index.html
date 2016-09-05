@@ -13,9 +13,7 @@
                 </section>
                 <section>
                     <h2>React</h2>
-                    <div>
-                        <img src="images/react-logo.svg" height="200" />
-                    </div>
+                    <img src="images/react-logo.svg" height="200" />
                     <q>A JavaScript library for <strong>building user interfaces</strong></q>.
                     <aside class="notes">
                         - Zasada jednej odpowiedzialności zarówno dla frameworka - jedyną odpowiedzialnością Reacta jest budowanie interfejsu
@@ -24,7 +22,7 @@
                 </section>
                 <section>
                     <section>
-                        <h2>Deklaratywność</h2>
+                        <h2>1. Deklaratywność</h2>
                     </section>
                     <section data-markdown>
                         <script type="text/template">
@@ -51,21 +49,19 @@
                         </aside>
                     </section>
                     <section>
-                        <img src="images/emoji-spaghetti.png" />
-                    </section>
-                    <section>
                         <img src="images/emoji-pizza.png" />
                     </section>
                 </section>
                 <section>
-                    <h2>Virtual DOM</h2>
+                    <h2>2. Wydajność</h2>
+                    <h4>Virtual DOM</h4>
                     <div>
                         <img src="images/virtual-dom.svg" height="300" />
                     </div>
                 </section>
                 <section>
                     <section>
-                        <h2>Komponent</h2>
+                        <h2>3. Komponenty</h2>
                         <img src="images/component-render.svg" height="300" />
                     </section>
                     <section>
@@ -81,17 +77,11 @@
                         <pre lang="xml"><code class="lang-js hljs javascript">(props, state) => element</code></pre>
                     </section>
                 </section>
-                <section>
-                    <section style="text-align: left">
-                        <ol start="1">
-                            <li>Komponent powinien mieć <strong>jedno źródło prawdy</strong>.</li>
-                        </ol>
-                    </section>
-                    <section style="text-align: left">
-                        <ol start="2">
-                            <li>Stan komponentu powinien być <br /><strong>minimalną reprezentacją</strong> potencjalnych zmian.</li>
-                        </ol>
-                    </section>
+                <section style="text-align: left">
+                    <ol start="1">
+                        <li>Komponent powinien mieć <strong>jedno źródło prawdy</strong>.</li>
+                        <li class="fragment">Stan komponentu powinien być <br /><strong>minimalną reprezentacją</strong> potencjalnych zmian.</li>
+                    </ol>
                 </section>
                 <section>
                     <section>
@@ -162,11 +152,14 @@
                     </section>
                 </section>
                 <section>
-                    <section>
+                    <section data-transition="slide-in fade-out">
                         <img src="images/example-extra-feature.png" />
                     </section>
-                    <section>
+                    <section data-transition="fade-in slide-out">
                         <img src="images/example-extra-feature-state.png" />
+                    </section>
+                    <section>
+                        <img src="images/containers-multiple-before-problem.svg" />
                     </section>
                     <section>
                         <div>
@@ -179,13 +172,22 @@
                     </section>
                 </section>
                 <section>
-                    <div>
-                        <img src="images/redux.svg" />
-                    </div>
-                    <aside class="notes">
-                        - Wydzielenie stanu do osobnej części aplikacji
-                        - Przy zmianie wymagań biznesowych, stan komponent podpina się pod store i czyta odpowiedni stan
-                    </aside>
+                    <section data-transition="slide-in fade-out">
+                        <img src="images/redux-1.svg" />
+                        <aside class="notes">
+                            - Wydzielenie stanu do osobnej części aplikacji
+                            - Przy zmianie wymagań biznesowych, stan komponent podpina się pod store i czyta odpowiedni stan
+                        </aside>
+                    </section>
+                    <section data-transition="fade-in fade-out">
+                        <img src="images/redux-2.svg" />
+                    </section>
+                    <section data-transition="fade-in fade-out">
+                        <img src="images/redux-3.svg" />
+                    </section>
+                    <section data-transition="fade-in slide-out">
+                        <img src="images/redux-4.svg" />
+                    </section>
                 </section>
                 <section>
                     <h2>Redux</h2>
@@ -206,65 +208,59 @@
                         <h4>Akcja</h4>
                     </section>
                     <section>
-                        <h3>3. Zmiana stanu jest czystą funkcją</h3>
+                        <h3>3. Zmiana stanu nie powoduje efektów ubocznych</h3>
                         <p>Modyfikację stanu opisuje funkcja</p>
                         <h4>Reducer</h4>
                     </section>
                 </section>
-                <section data-markdown>
-                    <script type="text/template">
-                        <h2>Action</h2>
-                        ```js
-                        {
-                          type: ADD_TODO,
-                          text: 'Build my first Redux app'
-                        }
-                        ```
-                        <aside class="notes">
-                            - Akcja opisuje co się zmieniło
-                            - Jedyne źródło informacji o zmianie dla store'a
-                            - Minimalna reprezentacja zmiany
-                            - Zwykły obiekt JavaScript
-                            - Jedyne wymagane pole to type
-                            - Akcja i stan muszą być serializowalne
-                        </aside>
-                    </script>
+                <section>
+                    <h2><em>Store</em></h2>
+                    <img src="images/redux-store.svg" />
+                </section>
+                <section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            <h2><em>Action</em></h2>
+                            Jedyne źródło informacji o zmianie.
+
+                            ```js
+                            {
+                              type: 'CHANGE_QUERY',
+                              query: 'adidas'
+                            }
+                            ```
+                            <aside class="notes">
+                                - Akcja opisuje co się zmieniło
+                                - Jedyne źródło informacji o zmianie
+                                - Minimalna reprezentacja zmiany
+                                - Zwykły obiekt JavaScript
+                                - Jedyne wymagane pole to type
+                                - Akcja i stan muszą być serializowalne, dlatego typ to String
+                            </aside>
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            <h2><em>Action creator</em></h2>
+                            ```js
+                            function changeQuery(query) {
+                              return {
+                                type: 'CHANGE_QUERY',
+                                query: query
+                              }
+                            }
+                            ```
+                            <aside class="notes">
+                                - Funkcja, która zwraca akcję
+                                - Testowalna
+                            </aside>
+                        </script>
+                    </section>
                 </section>
                 <section data-markdown>
                     <script type="text/template">
-                        <h2>Flux Standard Action</h2>
-                        ```js
-                        {
-                          type,
-                          payload,
-                          error,
-                          meta
-                        }
-                        ```
-                        <aside class="notes">
-                            Dobrze jest przygotować funkcję tworzącą FSA
-                        </aside>
-                    </script>
-                </section>
-                <section data-markdown>
-                    <script type="text/template">
-                        <h2>Action creator</h2>
-                        ```js
-                        function addItem(text) {
-                          return {
-                            type: ADD_TODO,
-                            text
-                          }
-                        }
-                        ```
-                        <aside class="notes">
-                            Funkcja, która zwraca akcję (jedną lub kilka)
-                        </aside>
-                    </script>
-                </section>
-                <section data-markdown>
-                    <script type="text/template">
-                        <h2>Reducer</h2>
+                        <h2><em>Reducer</em></h2>
+                        Opis zmiany stanu
                         ```js
                         (state, action) => state
                         ```
@@ -274,6 +270,75 @@
                         - Musi być funkcją bez efektów ubocznych
                         - Bez mutowania argumentów, bez requestów, bez niespodzianek.
                     </aside>
+                </section>
+                <section>
+                    <section data-transition="slide-in fade-out">
+                        <img src="images/reducer-1.svg" />
+                    </section>
+                    <section data-transition="fade-in fade-out">
+                        <img src="images/reducer-2.svg" />
+                    </section>
+                    <section data-transition="fade-in fade-out">
+                        <img src="images/reducer-3.svg" />
+                    </section>
+                    <section data-transition="fade-in fade-out">
+                        <img src="images/reducer-4.svg" />
+                    </section>
+                    <section data-transition="fade-in slide-out">
+                        <img src="images/reducer-5.svg" />
+                    </section>
+                </section>
+                <section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            <h2>Kompozycja reducerów</h2>
+                            ```js
+                            (state, action) => state
+                            ```
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ```js
+                            (state, action) => ({
+                              eyes: (eyes, action) => eyes,
+                              mouth: (mouth, action) => mouth,
+                              extras: (extras, action) => extras
+                            })
+                            ```
+                        </script>
+                    </section>
+                    <section data-transition="slide-in fade-out">
+                        <img src="images/redux-compose-1.svg" />
+                    </section>
+                    <section data-transition="fade-in slide-out">
+                        <img src="images/redux-compose-2.svg" />
+                    </section>
+                </section>
+                <section>
+                    <h2>Do zapamiętania</h2>
+                    <img src="images/react-logo.svg" class="small" height="100" />
+                    <h3>React</h3>
+                    <ol>
+                        <li class="fragment">Komponent powinien mieć <strong>jedno źródło prawdy</strong>.</li>
+                        <li class="fragment">Stan komponentu powinien być <br /><strong>minimalną reprezentacją</strong> potencjalnych zmian.</li>
+                    </ol>
+                </section>
+                <section>
+                    <h2>Do zapamiętania</h2>
+                    <img src="images/redux-logo.svg" class="small" height="100" />
+                    <h3>Redux</h3>
+                    <ol>
+                        <li class="fragment">Akcja opisuje <strong>co</strong> się zmieniło.</li>
+                        <li class="fragment">Reducer opisuje <strong>jak</strong> zmienić stan.</li>
+                        <li class="fragment">Reducer może reagować na wiele akcji.</li>
+                        <li class="fragment">Reducery można komponować.</li>
+                    </ol>
+                </section>
+                <section>
+                    <h2>Q&A</h2>
+                    <img src="images/wielad.png" height="200" />
+                    <a href="http://pawelwieladek.github.io">pawelwieladek.github.io</a>
                 </section>
             </div>
         </div>

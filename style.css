@@ -7,6 +7,7 @@ body {
 }
 
 .reveal section img {
+    display: block;
     border: none;
     box-shadow: none;
 }
@@ -30,7 +31,11 @@ body {
 }
 
 .reveal section img {
-    margin: 45px 15px;
+    margin: 45px auto;
+}
+
+.reveal section img.small {
+    margin: 20px auto;
 }
 
 .reveal h1.code,
