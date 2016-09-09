@@ -40,12 +40,6 @@
                     <h2>React</h2>
                     <img src="images/react-logo.svg" height="200" />
                     <q>A JavaScript library for <strong>building user interfaces</strong></q>.
-                    <aside class="notes">
-                        <ul>
-                            <li>Zasada jednej odpowiedzialności zarówno dla frameworka - jedyną odpowiedzialnością Reacta jest budowanie interfejsu</li>
-                            <li>React udostępnia komponent, który pomaga z zachowaniu Single Responsibility Principle</li>
-                        </ul>
-                    </aside>
                 </section>
                 <section>
                     <section>
@@ -57,9 +51,6 @@
                             setState({ visible: true });
                             ```
                         </script>
-                        <aside class="notes">
-                            - Deklaratywność stanu - mówię jak ma wyglądać stan aplikacji, a React sam wie jak zaaplikować tą zmianę na widoku
-                        </aside>
                     </section>
                     <section data-markdown>
                         <script type="text/template">
@@ -71,17 +62,12 @@
                             </Header>
                             ```
                         </script>
-                        <aside class="notes">
-                            - Deklaratywność widoku - mówię co ma być wyświetlone, a komponent sam wie jak to zrobić
-                        </aside>
                     </section>
                 </section>
                 <section>
                     <h2>2. Wydajność</h2>
                     <h4>Virtual DOM</h4>
-                    <div>
-                        <img src="images/virtual-dom.svg" height="300" />
-                    </div>
+                    <img src="images/virtual-dom.svg" height="300" />
                 </section>
                 <section>
                     <section>
@@ -102,7 +88,7 @@
                     </section>
                 </section>
                 <section style="text-align: left">
-                    <div style="margin-bottom: 100px">Komponent powinien mieć <strong>jedno źródło prawdy</strong> i <strong>jedną odpowiedzialność</strong>.</div>
+                    <div style="margin-bottom: 100px">Komponent powinien mieć <strong>jedną odpowiedzialność</strong>.</div>
                     <div class="fragment">Stan komponentu powinien być <br /><strong>minimalną reprezentacją</strong> potencjalnych zmian.</div>
                 </section>
                 <section>
@@ -111,18 +97,10 @@
                         <img src="images/example-component.png" />
                     </section>
                     <section>
-                        <div>
-                            <img src="images/component-simple.svg" />
-                        </div>
+                        <img src="images/component-simple.svg" />
                     </section>
                     <section>
-                        <div>
-                            <img src="images/container-component.svg" />
-                        </div>
-                        <aside class="notes">
-                            - Kontener state + request
-                            - Komponent render
-                        </aside>
+                        <img src="images/container-component.svg" />
                     </section>
                 </section>
                 <section>
@@ -152,25 +130,12 @@
                     </section>
                     <section>
                         <img src="images/container-large-state.svg" />
-                        <aside class="notes">
-                            - Stan kontenera rośnie
-                            - Złamana zasada minimalnej reprezentacji
-                        </aside>
                     </section>
                     <section>
                         <img src="images/container-unnecessary-render.svg" />
-                        <aside class="notes">
-                            - Zbędne przerenderowanie poddrzewa
-                        </aside>
                     </section>
                     <section>
-                        <div>
-                            <img src="images/containers-multiple.svg" />
-                        </div>
-                        <aside class="notes">
-                            - Wiele kontenerów
-                            - Stan każdego z nich jest mały
-                        </aside>
+                        <img src="images/containers-multiple.svg" />
                     </section>
                 </section>
                 <section>
@@ -187,19 +152,11 @@
                         <div>
                             <img src="images/containers-multiple-problem.svg" />
                         </div>
-                        <aside class="notes">
-                            - Złamana zasada jednego źródła prawdy - stan jest rozrzucony po wielu komponentach
-                            - Złamana zasada open-close
-                        </aside>
                     </section>
                 </section>
                 <section>
                     <section data-transition="slide-in fade-out">
                         <img src="images/redux-1.svg" />
-                        <aside class="notes">
-                            - Wydzielenie stanu do osobnej części aplikacji
-                            - Przy zmianie wymagań biznesowych, stan komponent podpina się pod store i czyta odpowiedni stan
-                        </aside>
                     </section>
                     <section data-transition="fade-in fade-out">
                         <img src="images/redux-2.svg" />
@@ -213,9 +170,7 @@
                 </section>
                 <section>
                     <h2>Redux</h2>
-                    <div>
-                        <img src="images/redux-logo.svg" height="200" />
-                    </div>
+                    <img src="images/redux-logo.svg" height="200" />
                     <q><strong>Predictable state container</strong> for JavaScript apps.</q>
                 </section>
                 <section>
@@ -251,14 +206,6 @@
                               query: 'adidas'
                             }
                             ```
-                            <aside class="notes">
-                                - Akcja opisuje co się zmieniło
-                                - Jedyne źródło informacji o zmianie
-                                - Minimalna reprezentacja zmiany
-                                - Zwykły obiekt JavaScript
-                                - Jedyne wymagane pe to type
-                                - Akcja i stan muszą być serializowalne, dlatego typ to String
-                            </aside>
                         </script>
                     </section>
                     <section data-markdown>
@@ -272,10 +219,9 @@
                               }
                             }
                             ```
-                            <aside class="notes">
-                                - Funkcja, która zwraca akcję
-                                - Testowalna
-                            </aside>
+                            ```
+                            store.dispatch(changeQuery('xyz'));
+                            ```
                         </script>
                     </section>
                 </section>
@@ -287,11 +233,6 @@
                         (state, action) => state
                         ```
                     </script>
-                    <aside class="notes">
-                        - Reducer opisuje jak zmienić stan, wiedząc co się zmieniło
-                        - Musi być funkcją bez efektów ubocznych
-                        - Bez mutowania argumentów, bez requestów, bez niespodzianek.
-                    </aside>
                 </section>
                 <section>
                     <section data-transition="slide-in fade-out">
@@ -350,7 +291,7 @@
                     <img src="images/react-logo.svg" class="small" height="100" />
                     <h3>React</h3>
                     <ul>
-                        <li class="fragment">Jedno <strong>źródło prawdy</strong> i jedna <strong>odpowiedzialność</strong></li>
+                        <li class="fragment">Jedna <strong>odpowiedzialność</strong></li>
                         <li class="fragment"><strong>Minimalną reprezentacja</strong> potencjalnych zmian</li>
                         <li class="fragment">Wzorzec <strong>Higher Order Component</strong></li>
                         <li class="fragment">Unikanie <strong>zbędnego renderowania</strong></li>
